@@ -1,0 +1,11 @@
+{
+  "buildCommand": "cd frontend && npm run build",
+  "outputDirectory": "frontend/dist",
+  "devCommand": "cd frontend && npm run dev",
+  "env": {
+    "VITE_BACKEND_URL": "@backend_url",
+    "VITE_RAZORPAY_KEY_ID": "@razorpay_key"
+  },
+  "ignore": ["admin/**", "backend/**"]
+}
+
