@@ -19,7 +19,12 @@ connectCloudinary()
 // middlewaresecommerce-app
 
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+  origin: '*', // Allow all origins
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'], 
+  allowedHeaders: ['Content-Type', 'Authorization', 'token', 'X-Requested-With'], // Allow custom headers including 'token'
+  credentials: false // Set to true if you need to send cookies
+}))
 
 // API endpoints
 app.use('/api/user', userRouter)
